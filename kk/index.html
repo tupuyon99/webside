@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jurgen's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">Jurgen's</h1>
+    </header>
+
+    
+
+    <section class="about">
+        <div class="about__text">
+            <h2>PERSONAL</h2>
+            <p>Hola, mi nombre es Jurgen De la Hoz y este es mi portafolio. Soy un joven amante al arte y flexible a nuevas ideas.</p>
+        </div>
+        <div class="about__images">
+            <div class="about__image-wrapper">
+                <img src="img/jj.jpg" class="about__image" alt="Descripción de la imagen">
+            </div>
+            <div class="about__image-wrapper">
+                <img src="img/pemsar.jpg" class="about__image" alt="Descripción de la imagen">
+            </div>
+        </div>
+        <p class="about__welcome">Bienvenido</p>
+    </section>
+
+    <section class="works">
+        <h2 class="works__title">Trabajos</h2>
+        <div class="carousel">
+            <div class="carousel__track">
+                <div class="carousel__slide">
+                    <img src="./img/mariojj.jpg" alt="Trabajo 1" class="carousel__image">
+                </div>
+                <div class="carousel__slide">
+                    <img src="./img/jjj.jpg" alt="Trabajo 2" class="carousel__image">
+                </div>
+                <div class="carousel__slide">
+                    <img src="./img/imgwpp.jpg" alt="Trabajo 3" class="carousel__image">
+                </div>
+                <div class="carousel__slide">
+                    <img src="./img/matas.jpg" alt="Trabajo 4" class="carousel__image">
+                </div>
+            </div>
+            <button class="carousel__button carousel__button--left" aria-label="Anterior">&lt;</button>
+            <button class="carousel__button carousel__button--right" aria-label="Siguiente">&gt;</button>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="services__title">Servicios</h2>
+        <button class="services__item" onclick="window.open('https://www.instagram.com/jurgen.delahoz/', '_blank')">Fotografía</button>
+        <button class="services__item" onclick="window.open('https://wa.me/+573243897283', '_blank')">UX</button>
+        <button class="services__item" onclick="window.open('https://wa.me/+573243897283', '_blank')">Diseño Gráfico</button>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__icons">
+            <a href="https://wa.me/+573243897283" target="_blank">
+                <img src="/img/WhatsApp.svg.webp" alt="WhatsApp" class="footer__icon--whatsapp">
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <img src="/img/Instagram-Logo.wine.png" alt="Instagram" class="footer__icon--instagram">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const track = document.querySelector('.carousel__track');
+        const slides = Array.from(track.children);
+        const prevButton = document.querySelector('.carousel__button--left');
+        const nextButton = document.querySelector('.carousel__button--right');
+        let currentIndex = 0;
+
+        function moveToSlide(index) {
+            const slideWidth = slides[0].getBoundingClientRect().width;
+            track.style.transform = `translateX(-${index * slideWidth}px)`;
+            currentIndex = index;
+        }
+
+        nextButton.addEventListener('click', () => {
+            if (currentIndex < slides.length - 1) {
+                moveToSlide(currentIndex + 1);
+            } else {
+                moveToSlide(0);
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                moveToSlide(currentIndex - 1);
+            } else {
+                moveToSlide(slides.length - 1);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            moveToSlide(currentIndex);
+        });
+    </script>
+</body>
+
+</html>

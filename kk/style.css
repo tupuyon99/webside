@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Manrope:wght@200..800&family=Oswald:wght@200..700&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    background-color: #6D6D6D;
+    color: #fff;
+}
+
+h1, h2 {
+    font-family: "Italiana", serif;
+    margin: 0;
+}
+
+.header {
+    background-color: #6D6D6D;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.header__title {    
+    font-size: 3em;
+    margin: 0;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px 0;
+    position: relative;
+}
+
+.about__text {
+    text-align: center;
+    margin-bottom: 20px; /* Ajusta la separación entre el texto y las imágenes */
+}
+
+.about__text h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.about__text p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.about__welcome {
+    font-style: italic;
+    font-size: 50px; /* Tamaño de fuente ajustado */
+    text-align: center;
+    margin-top: 20px;
+}
+
+.about__images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px; /* Separación entre las imágenes y el texto "Bienvenido" */
+}
+
+.about__image-wrapper {
+    max-width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.about__image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+@media (max-width: 768px) {
+    .about__text h2 {
+        font-size: 2em; /* Tamaño de fuente ajustado */
+    }
+
+    .about__text p {
+        font-size: 1em; /* Tamaño de fuente ajustado */
+    }
+
+    .about__images {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .about__image-wrapper {
+        max-width: 90%; /* Ajusta el tamaño en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .about__text h2 {
+        font-size: 1.5em;
+    }
+
+    .about__text p {
+        font-size: 0.9em;
+    }
+
+    .about__image-wrapper {
+        max-width: 100%; /* Ocupa el máximo ancho disponible */
+    }
+}
+
+.works {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #333;
+    margin-top: 40px;
+}
+
+.works__title {
+    margin-bottom: 20px;
+    font-size: 5.0em;
+}
+
+.works__carousel {
+    display: flex;
+    overflow: hidden; 
+    justify-content: center; 
+    position: relative;
+    width: 818px; 
+    margin: 0 auto;
+}
+
+.works__slide {
+    min-width: 100%; 
+    transition: transform 0.3s ease-in-out; 
+}
+
+.works__image {
+    width: 818px;
+    height: 731px;
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+.services {
+    text-align: center;
+    padding: 40px 0;
+    background-color: #6D6D6D;
+}
+
+.services__title {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.services__item {
+    width: 70%;
+    background-color: #785a5a;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 15px auto;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.services__item:hover {
+    background-color: #563d3d;
+}
+
+.footer__icon--whatsapp {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+}
+
+.footer__icon--instagram {
+    width: 100px;
+    height: 42px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: contain;
+    margin-left: -25px;
+}
+
+.footer__icon--whatsapp:hover,
+.footer__icon--instagram:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        background-color: #333;
+    }
+
+    .mobile-menu.show {
+        display: flex;
+    }
+}
+
+.carousel {
+    position: relative;
+    width: 100%; 
+    max-width: 818px; 
+    height: auto; 
+    margin: 0 auto;
+    overflow: hidden; 
+    border-radius: 10px;
+}
+.carousel__track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    width: 100%;
+}
+
+.carousel__slide {
+    min-width: 100%;
+}
+
+.carousel__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.carousel__button--left {
+    left: 5px; 
+}
+
+.carousel__button--right {
+    right: 5px;
+}
+
+.carousel__button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
